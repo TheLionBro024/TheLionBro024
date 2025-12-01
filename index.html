@@ -1,190 +1,157 @@
-import React from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TheLionBro024</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f8fafc; color: #0f172a; }
+    header { max-width: 1100px; margin: auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+    nav a { margin-left: 15px; text-decoration: none; color: #334155; }
+    nav a:hover { text-decoration: underline; }
+    .section { max-width: 1100px; margin: auto; padding: 40px 20px; }
+    .card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .grid { display: grid; gap: 20px; }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .gallery { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    button { background: #0f172a; color: white; padding: 10px 16px; border: none; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #1e293b; }
+    input, textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; margin-top: 5px; }
+  </style>
+</head>
+<body>
 
-// Single-file React component for a personal "all-in-one" site.
-// Tailwind CSS assumed available in the host project.
-// Exported as default for quick preview.
+<header>
+  <div>
+    <h1 style="margin:0;font-size:28px;font-weight:800;">TheLionBro024</h1>
+    <p style="margin:0;font-size:14px;color:#475569;">Maker · FPV pilot · Photographer · Engineering fan</p>
+  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#gear">Gear</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-export default function TheLionBroSite() {
-  const gear = [
-    "DJI Goggles 2",
-    "SpeedyBee F405 flight controller",
-    "Garmin eTrex 32x",
-    "Garmin Instinct 2X Solar",
-    "DJI Osmo Action 5 Pro",
-    "Ender 5 Pro (3D printer)",
-    "Icom IC-V80 VHF transceiver",
-    "RTX 3060 Ti / i7-13700KF PC",
-  ];
-
-  const skills = [
-    "FPV piloting",
-    "Drone & UAV design",
-    "Photography & videography",
-    "Embedded systems (Arduino, ESP32)",
-    "PCB design & SMD soldering",
-    "Ground control station (GCS) design",
-    "3D printing & custom hardware",
-    "SDR & RF engineering",
-  ];
-
-  const projects = [
-    {
-      title: "Ultra long-range UAV (design)",
-      desc: "Working on a 2500–3000 mm wingspan platform with long endurance and >100 km range goals.",
-      link: "#projects",
-    },
-    {
-      title: "Custom GCS & rotator",
-      desc: "Building an overkill ground-control station and a custom antenna rotator for directional RF links.",
-      link: "#projects",
-    },
-    {
-      title: "3D printer upgrades & Voron build",
-      desc: "Converting and upgrading an Ender 5 Pro into a reliable CoreXY and building a Voron 2.4.",
-      link: "#projects",
-    },
-  ];
-
-  return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 antialiased">
-      <header className="max-w-5xl mx-auto p-6 flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-extrabold">TheLionBro024</h1>
-          <p className="text-sm text-slate-600">Maker · FPV pilot · Photographer · Electrical & aerospace engineering fan</p>
-        </div>
-        <nav className="space-x-4 text-sm text-slate-700">
-          <a href="#about" className="hover:underline">About</a>
-          <a href="#projects" className="hover:underline">Projects</a>
-          <a href="#gear" className="hover:underline">Gear</a>
-          <a href="#contact" className="hover:underline">Contact</a>
-        </nav>
-      </header>
-
-      <main className="max-w-5xl mx-auto px-6 pb-16">
-        <section className="grid md:grid-cols-2 gap-8 items-center py-8">
-          <div>
-            <h2 className="text-4xl font-bold">Hi — I build, fly, and film.</h2>
-            <p className="mt-4 text-slate-700">I design long-range UAVs, build hardware (PCBs and 3D-printed rigs), pilot FPV, and create wildlife and portrait photography and video. I like practical overkill: robust systems that actually work in the field.</p>
-
-            <div className="mt-6 flex gap-3">
-              <a href="#projects" className="inline-block px-4 py-2 bg-slate-900 text-white rounded-lg">See projects</a>
-              <a href="#contact" className="inline-block px-4 py-2 border border-slate-300 rounded-lg">Get in touch</a>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow p-4">
-            <div className="w-full h-56 bg-slate-100 rounded-lg flex items-center justify-center"> 
-              <div className="text-slate-400">Profile / portfolio image</div>
-            </div>
-
-            <ul className="mt-4 grid grid-cols-2 gap-2 text-sm text-slate-700">
-              <li><strong>Location:</strong> Sommerfeld, Paraguay</li>
-              <li><strong>Languages:</strong> English, Spanish</li>
-              <li><strong>Interests:</strong> UAVs, FPV, 3D printing</li>
-              <li><strong>Availability:</strong> Freelance & collaboration</li>
-            </ul>
-          </div>
-        </section>
-
-        <section id="about" className="py-8">
-          <h3 className="text-2xl font-semibold">About me</h3>
-          <p className="mt-3 text-slate-700">I'm a hands-on maker who mixes software and hardware. I tinker with SDRs, radios, flight controllers, and camera systems. My projects often connect the physical world (drones, antennas, sensors) with software (autopilots, GCS, telemetry, video). I like to document work with photos and videos for wildlife and expedition projects.</p>
-
-          <div className="mt-6 grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl shadow p-4">
-              <h4 className="font-semibold">Skills</h4>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                {skills.map((s) => (
-                  <li key={s}>• {s}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-xl shadow p-4">
-              <h4 className="font-semibold">Quick facts</h4>
-              <ul className="mt-3 text-sm text-slate-700 space-y-2">
-                <li>Started soldering and FPV by building and repairing drones.</li>
-                <li>Building long-range UAVs with Starlink and other comms research.</li>
-                <li>Working knowledge of ArduPilot, Mission Planner, and Meshtastic repeaters.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section id="projects" className="py-8">
-          <h3 className="text-2xl font-semibold">Projects</h3>
-          <div className="mt-4 grid md:grid-cols-3 gap-4">
-            {projects.map((p) => (
-              <article key={p.title} className="bg-white p-4 rounded-xl shadow">
-                <h5 className="font-semibold">{p.title}</h5>
-                <p className="mt-2 text-sm text-slate-700">{p.desc}</p>
-                <a href={p.link} className="mt-3 inline-block text-sm text-slate-600 hover:underline">Learn more</a>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="gear" className="py-8">
-          <h3 className="text-2xl font-semibold">Gear & tools</h3>
-          <p className="mt-2 text-sm text-slate-700">A selection of the tools I use in builds, filming, and fieldwork.</p>
-
-          <div className="mt-4 grid sm:grid-cols-2 md:grid-cols-3 gap-3">
-            {gear.map((g) => (
-              <div key={g} className="bg-white rounded-lg p-3 shadow text-sm">{g}</div>
-            ))}
-          </div>
-        </section>
-
-        <section id="gallery" className="py-8">
-          <h3 className="text-2xl font-semibold">Photo & video samples</h3>
-          <p className="mt-2 text-sm text-slate-700">Field and portrait shots, short clips from expeditions and FPV flights.</p>
-
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="h-32 bg-slate-100 rounded-lg flex items-center justify-center text-slate-400">Image {i + 1}</div>
-            ))}
-          </div>
-        </section>
-
-        <section id="contact" className="py-8">
-          <h3 className="text-2xl font-semibold">Contact</h3>
-          <p className="mt-2 text-sm text-slate-700">Interested in collaborating? Send a message or connect on socials.</p>
-
-          <div className="mt-4 grid md:grid-cols-2 gap-6">
-            <form className="bg-white p-4 rounded-xl shadow">
-              <label className="block text-sm text-slate-700">Name</label>
-              <input className="w-full mt-1 p-2 border rounded" placeholder="Your name" />
-
-              <label className="block mt-3 text-sm text-slate-700">Email</label>
-              <input className="w-full mt-1 p-2 border rounded" placeholder="you@example.com" />
-
-              <label className="block mt-3 text-sm text-slate-700">Message</label>
-              <textarea className="w-full mt-1 p-2 border rounded" rows={4} placeholder="Short message"></textarea>
-
-              <div className="mt-4">
-                <button type="button" className="px-4 py-2 bg-slate-900 text-white rounded-lg">Send (no backend)</button>
-              </div>
-            </form>
-
-            <div className="bg-white p-4 rounded-xl shadow">
-              <h4 className="font-semibold">Other ways to reach me</h4>
-              <ul className="mt-3 text-sm text-slate-700 space-y-2">
-                <li>Discord: <span className="font-medium">TheLionBro024</span></li>
-                <li>Instagram: <span className="font-medium">@yourhandle</span></li>
-                <li>GitHub: <span className="font-medium">github.com/yourhandle</span></li>
-              </ul>
-
-              <div className="mt-4">
-                <a href="#" className="text-sm underline">Download resume (placeholder)</a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <footer className="mt-12 py-8 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} TheLionBro024 — built for fieldwork, tinkering, and shareable results.
-        </footer>
-      </main>
+<div class="section grid grid-2">
+  <div>
+    <h2 style="font-size:34px;font-weight:700;">Hi — I build, fly, and film.</h2>
+    <p style="margin-top:10px;color:#475569;">I design long-range UAVs, build hardware, pilot FPV, and shoot wildlife and portrait photography. I like clean, functional builds that hold up in the field.</p>
+    <div style="margin-top:20px;display:flex;gap:12px;">
+      <a href="#projects"><button>See projects</button></a>
+      <a href="#contact"><button style="background:white;color:#0f172a;border:1px solid #cbd5e1;">Get in touch</button></a>
     </div>
-  );
-}
+  </div>
+
+  <div class="card">
+    <div style="background:#e2e8f0;height:200px;border-radius:10px;display:flex;justify-content:center;align-items:center;color:#94a3b8;">Profile Image</div>
+    <ul style="margin-top:15px;font-size:14px;color:#475569;list-style:none;padding:0;">
+      <li><strong>Location:</strong> Sommerfeld, Paraguay</li>
+      <li><strong>Interests:</strong> UAVs, FPV, 3D printing</li>
+      <li><strong>Languages:</strong> English, Spanish</li>
+    </ul>
+  </div>
+</div>
+
+<div id="about" class="section">
+  <h3 style="font-size:26px;font-weight:600;">About me</h3>
+  <p style="margin-top:10px;color:#475569;">I work on UAVs, embedded systems, SDR, antennas, and camera rigs. My projects blend hardware with software and field‑tested reliability.</p>
+  <div class="grid grid-2" style="margin-top:25px;">
+    <div class="card">
+      <h4 style="font-weight:600;">Skills</h4>
+      <ul style="margin-top:10px;font-size:14px;color:#475569;line-height:1.6;">
+        <li>FPV piloting</li>
+        <li>Drone & UAV design</li>
+        <li>Photography and videography</li>
+        <li>Embedded systems</li>
+        <li>PCB design & SMD soldering</li>
+        <li>GCS design</li>
+        <li>3D printing</li>
+        <li>SDR & RF experimenting</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4 style="font-weight:600;">Quick facts</h4>
+      <ul style="margin-top:10px;font-size:14px;color:#475569;line-height:1.6;">
+        <li>Started with FPV repair and custom drones.</li>
+        <li>Working on long‑range UAVs.</li>
+        <li>Experience with ArduPilot, Mission Planner and Meshtastic.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="projects" class="section">
+  <h3 style="font-size:26px;font-weight:600;">Projects</h3>
+  <div class="grid grid-3" style="margin-top:20px;">
+    <div class="card">
+      <h4 style="font-weight:600;">Ultra long‑range UAV</h4>
+      <p style="font-size:14px;color:#475569;margin-top:10px;">Working on a 2500–3000 mm platform with long endurance and big‑range goals.</p>
+    </div>
+    <div class="card">
+      <h4 style="font-weight:600;">Custom GCS & antenna rotator</h4>
+      <p style="font-size:14px;color:#475569;margin-top:10px;">Building a full station with high‑gain tracking and multi‑radio support.</p>
+    </div>
+    <div class="card">
+      <h4 style="font-weight:600;">3D printer upgrades</h4>
+      <p style="font-size:14px;color:#475569;margin-top:10px;">CoreXY conversion, Voron build, and reliable field printing.</p>
+    </div>
+  </div>
+</div>
+
+<div id="gear" class="section">
+  <h3 style="font-size:26px;font-weight:600;">Gear & tools</h3>
+  <div class="grid grid-3" style="margin-top:20px;">
+    <div class="card">DJI Goggles 2</div>
+    <div class="card">SpeedyBee F405 FC</div>
+    <div class="card">Garmin eTrex 32x</div>
+    <div class="card">DJI Osmo Action 5 Pro</div>
+    <div class="card">Ender 5 Pro</div>
+    <div class="card">Icom IC‑V80</div>
+  </div>
+</div>
+
+<div class="section">
+  <h3 style="font-size:26px;font-weight:600;">Photo & video samples</h3>
+  <div class="grid gallery" style="margin-top:20px;">
+    <div class="card" style="height:120px;display:flex;align-items:center;justify-content:center;color:#94a3b8;">Image 1</div>
+    <div class="card" style="height:120px;display:flex;align-items:center;justify-content:center;color:#94a3b8;">Image 2</div>
+    <div class="card" style="height:120px;display:flex;align-items:center;justify-content:center;color:#94a3b8;">Image 3</div>
+    <div class="card" style="height:120px;display:flex;align-items:center;justify-content:center;color:#94a3b8;">Image 4</div>
+    <div class="card" style="height:120px;display:flex;align-items:center;justify-content:center;color:#94a3b8;">Image 5</div>
+    <div class="card" style="height:120px;display:flex;align-items:center;justify-content:center;color:#94a3b8;">Image 6</div>
+  </div>
+</div>
+
+<div id="contact" class="section grid grid-2">
+  <div class="card">
+    <h4 style="font-weight:600;">Contact</h4>
+    <label style="margin-top:10px;font-size:14px;color:#475569;">Name</label>
+    <input placeholder="Your name" />
+
+    <label style="margin-top:15px;font-size:14px;color:#475569;">Email</label>
+    <input placeholder="you@example.com" />
+
+    <label style="margin-top:15px;font-size:14px;color:#475569;">Message</label>
+    <textarea rows="4" placeholder="Short message"></textarea>
+
+    <button style="margin-top:15px;">Send (no backend)</button>
+  </div>
+
+  <div class="card">
+    <h4 style="font-weight:600;">Other ways to reach me</h4>
+    <ul style="margin-top:10px;font-size:14px;color:#475569;line-height:1.6;list-style:none;padding:0;">
+      <li>Discord: <strong>TheLionBro024</strong></li>
+      <li>Instagram: <strong>@yourhandle</strong></li>
+      <li>GitHub: <strong>github.com/yourhandle</strong></li>
+    </ul>
+  </div>
+</div>
+
+<footer style="text-align:center;padding:40px 0;font-size:14px;color:#64748b;">© 2025 TheLionBro024</footer>
+
+</body>
+</html>
